@@ -1,0 +1,95 @@
+:root {
+    --bg: #fff;
+    --text: #222;
+    --header-bg: #3498db;
+    --sidebar-bg: #2980b9;
+    --footer-bg: #3498db;
+    --link: #fff;
+  }
+
+  body.dark {
+    --bg: #222;
+    --text: #eee;
+    --header-bg: #444;
+    --sidebar-bg: #333;
+    --footer-bg: #444;
+    --link: #ddd;
+  }
+
+  body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background-color: var(--bg);
+    color: var(--text);
+    display: grid;
+    grid-template-areas:
+      "header header"
+      "sidebar main"
+      "footer footer";
+    grid-template-columns: 200px 1fr;
+    grid-template-rows: 50px 1fr 30px;
+    height: 100vh;
+  }
+
+  header {
+    grid-area: header;
+    background: var(--header-bg);
+    color: var(--link);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 1rem;
+  }
+
+  nav {
+    grid-area: sidebar;
+    background: var(--sidebar-bg);
+    padding: 1rem;
+  }
+  nav a {
+    display: block;
+    color: var(--link);
+    margin-bottom: 1rem;
+    text-decoration: none;
+  }
+
+  main {
+    grid-area: main;
+    padding: 1rem;
+  }
+
+  footer {
+    grid-area: footer;
+    background: var(--footer-bg);
+    color: var(--link);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.8rem;
+  }
+
+  /* Simple toggle switch style */
+  .toggle {
+    cursor: pointer;
+    background: #fff;
+    border-radius: 12px;
+    width: 40px;
+    height: 20px;
+    position: relative;
+  }
+  .toggle-circle {
+    background: var(--header-bg);
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    transition: left 0.3s;
+  }
+  input[type="checkbox"]:checked + .toggle .toggle-circle {
+    left: 22px;
+  }
+  input[type="checkbox"] {
+    display: none;
+  }

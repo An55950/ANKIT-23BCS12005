@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Simple Admin Dashboard</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div>Admin Dashboard</div>
+    <label>
+      <input type="checkbox" id="theme-toggle" />
+      <div class="toggle">
+        <div class="toggle-circle"></div>
+      </div>
+    </label>
+  </header>
+
+  <nav>
+    <a href="#">Home</a>
+    <a href="#">Users</a>
+    <a href="#">Settings</a>
+  </nav>
+
+  <main>
+    <h2>Welcome</h2>
+    <p>This is your dashboard content area. </p>
+  </main>
+
+  <footer>
+    &copy; 2025 Your Company
+  </footer>
+
+  <script>
+    const checkbox = document.getElementById('theme-toggle');
+    checkbox.addEventListener('change', () => {
+      document.body.classList.toggle('dark', checkbox.checked);
+    });
+  </script>
+</body>
+</html>
